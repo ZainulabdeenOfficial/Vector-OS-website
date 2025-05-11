@@ -23,6 +23,17 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error("Error caught by ErrorBoundary:", error, errorInfo)
+
+    // Check if it's a WebGL context error
+    if (
+      error.message &&
+      (error.message.includes("WebGL") ||
+        error.message.includes("context") ||
+        error.message.includes("THREE") ||
+        error.message.includes("renderer"))
+    ) {
+      console.warn("WebGL rendering error detected, falling back to 2D version")
+    }
   }
 
   render() {

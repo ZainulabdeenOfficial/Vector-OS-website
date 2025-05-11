@@ -1,20 +1,12 @@
 "use client"
 
-import dynamic from "next/dynamic"
-import FallbackHero from "@/components/fallback-hero"
 import FeaturedSection from "@/components/featured-section"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Zap, Shield, Code, Cpu, Cloud, Brain, GitBranch, Database } from "lucide-react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
-import { Suspense } from "react"
-
-// Dynamically import the HeroSection with optimized loading and error handling
-const HeroSection = dynamic(() => import("@/components/hero-section"), {
-  ssr: false,
-  loading: () => <FallbackHero />,
-})
+import HeroSection from "@/components/hero-section"
 
 // Simplified animation variants
 const fadeIn = {
@@ -54,9 +46,7 @@ const staggerItem = {
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Suspense fallback={<FallbackHero />}>
-        <HeroSection />
-      </Suspense>
+      <HeroSection />
 
       <section className="container mx-auto px-4 py-20">
         <motion.div

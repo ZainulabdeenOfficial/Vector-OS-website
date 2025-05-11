@@ -152,17 +152,29 @@
     animation: float 4s ease-in-out infinite;
   }
 
+  .animate-pulse-slow {
+    animation: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 20s linear infinite;
+  }
+
+  .animate-spin-reverse-slow {
+    animation: spin-reverse 30s linear infinite;
+  }
+
   /* Animation Delays - reduced for faster perceived performance */
   .animation-delay-100 {
     animation-delay: 100ms;
   }
 
   .animation-delay-200 {
-    animation-delay: 200ms;
+    animation-delay: 2s;
   }
 
   .animation-delay-300 {
-    animation-delay: 300ms;
+    animation-delay: 3s;
   }
 
   /* Optimized Keyframes */
@@ -260,6 +272,34 @@
     }
     100% {
       transform: translateY(0px);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin-reverse {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
     }
   }
 
