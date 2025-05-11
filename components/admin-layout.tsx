@@ -4,22 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import {
-  BarChart,
-  FileText,
-  Home,
-  ImageIcon,
-  LogOut,
-  Menu,
-  MessageSquare,
-  PlusCircle,
-  Settings,
-  User,
-  Users,
-  UserPlus,
-  X,
-  Shield,
-} from "lucide-react"
+import { FileText, Home, LogOut, Menu, PlusCircle, User, Users, UserPlus, X } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
@@ -36,6 +21,7 @@ import { ThemeToggle } from "./theme-toggle"
 import { VectorLogo } from "./vector-logo"
 import { motion, AnimatePresence } from "framer-motion"
 
+// Cleaned up sidebar items - removed unnecessary tabs
 const sidebarItems = [
   {
     title: "Dashboard",
@@ -70,32 +56,7 @@ const sidebarItems = [
         href: "/dashboard/add-admin",
         icon: UserPlus,
       },
-      {
-        title: "Admin Permissions",
-        href: "/dashboard/admin-permissions",
-        icon: Shield,
-      },
     ],
-  },
-  {
-    title: "Analytics",
-    href: "/dashboard/analytics",
-    icon: BarChart,
-  },
-  {
-    title: "Messages",
-    href: "/dashboard/messages",
-    icon: MessageSquare,
-  },
-  {
-    title: "Media",
-    href: "/dashboard/media",
-    icon: ImageIcon,
-  },
-  {
-    title: "Settings",
-    href: "/dashboard/settings",
-    icon: Settings,
   },
 ]
 
@@ -180,11 +141,6 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   <span>Profile</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Settings className="mr-2 h-4 w-4" />
-                  <span>Settings</span>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
                   <LogOut className="mr-2 h-4 w-4" />
                   <span>Log out</span>
                 </DropdownMenuItem>
@@ -242,11 +198,6 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 <User className="mr-2 h-4 w-4" />
                 <span>Profile</span>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Settings className="mr-2 h-4 w-4" />
-                <span>Settings</span>
-              </DropdownMenuItem>
-              <DropdownMenuSeparator />
               <DropdownMenuItem>
                 <LogOut className="mr-2 h-4 w-4" />
                 <span>Log out</span>

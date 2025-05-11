@@ -228,9 +228,9 @@ export default function Home() {
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
-              <Link href="https://github.com/Vector-OS" target="_blank" rel="noopener noreferrer">
+              <Link href="/dashboard">
                 <Button variant="outline" size="lg" className="rounded-full">
-                  Visit Our GitHub
+                  Admin Dashboard
                 </Button>
               </Link>
             </div>
